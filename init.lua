@@ -135,7 +135,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
+-- vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -163,6 +163,9 @@ vim.opt.confirm = true
 
 -- Hard tab width
 vim.opt.tabstop = 4
+
+-- prevent the built-in vim.lsp.completion autotrigger from selecting the first item
+vim.opt.completeopt = { 'menuone', 'noselect', 'popup' }
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
