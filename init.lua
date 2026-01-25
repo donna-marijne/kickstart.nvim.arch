@@ -93,6 +93,8 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+vim.g.sleuth_defaults = 'tabstop=4,shiftwidth=4'
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -427,7 +429,8 @@ require('lazy').setup({
 
       local function buffers_sorted()
         builtin.buffers {
-          sort_lastused = true,
+          ignore_current_buffer = true,
+          sort_mru = true,
         }
       end
 
@@ -678,7 +681,7 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
